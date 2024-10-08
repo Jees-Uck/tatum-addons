@@ -1,0 +1,23 @@
+query RunInput {
+  cart {
+    lines {
+      id
+      quantity
+      merchandise {
+        ... on ProductVariant {
+          id
+          product {
+            handle
+            metafield(namespace: "custom", key: "color") {
+              value
+            }
+          }
+        }
+      }
+      attribute {
+        key
+        value
+      }
+    }
+  }
+}
